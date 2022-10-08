@@ -1,0 +1,345 @@
+* {
+
+    box-sizing: border-box;
+}
+
+html {
+
+    height: 100%;
+    width: 100%;
+}
+
+body {
+
+    font-family: 'Courier New', Arial, sans-serif;
+    margin: 0px;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: -0.066em;
+    height: 100%;
+
+}
+
+header {
+
+    border-bottom: 0.1px solid lightgray;
+    margin: 0px;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+.header-div {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+
+    border-top: 0.1px solid lightgray;
+    margin: 0px;
+    padding: 15px;
+    width: 100%;
+}
+
+main {
+    display: block;
+    padding-top: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+.bagis-ust-div {
+
+    height: 500px;
+    max-width: 1100px;
+    padding: 0px 22px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+}
+
+.bagis-div {
+
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+    -webkit-box-align: start;
+    align-items: start;
+    padding-top: 48px;
+    padding-bottom: 100px;
+}
+
+.gorsel {
+
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgray;
+}
+
+.bagis_formu {
+
+    font-size: 20px;
+    display: grid;
+    gap: 25px;
+    padding-top: 20px;
+
+}
+
+.form-parcasi {
+
+    margin: 10px;
+    position: relative;
+}
+
+#form-baslik {
+
+    font-size: 25px;
+}
+
+#form-miktar {
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 12px;
+    gap: 5px;
+    font-size: 24px;
+}
+
+#form-bilgiler {
+    display: grid;
+    gap: 10px;
+    font-size: 30px;
+}
+
+#bagis_miktari:hover {
+
+    transition: 100ms;
+    border-bottom: 1px solid rgb(139, 135, 135);
+}
+
+#bagis_miktari:focus {
+
+    transition: 10ms;
+    border-bottom: rgb(11, 209, 11) solid 2px;
+}
+
+#bagis_miktari {
+
+    outline: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: lightgray solid 1px;
+    min-height: 44px;
+    height: fit-content;
+    max-height: 320px;
+    font-size: 24px;
+    padding: 14px 0px;
+}
+
+.bilgi-input:hover {
+
+    transition: 100ms;
+    border: 1px solid rgb(117, 113, 113);
+}
+
+.bilgi-input:focus {
+
+    transition: 0ms;
+    border: 1px solid rgb(7, 160, 7);
+}
+
+.bilgi-input {
+
+    outline: none;
+    font-size: 20px;
+    border: 1px solid rgb(175, 170, 170);
+    border-radius: 7px;
+    padding: 10px;
+}
+
+#form-button:hover {
+
+    background-color: rgb(19, 179, 19);
+}
+
+#form-button:focus {
+
+    background-color: rgb(19, 179, 19);
+}
+
+#form-button {
+
+    outline: none;
+    color: white;
+    transition-delay: 2ms;
+    transition-duration: 100ms;
+    background-color: rgb(7, 160, 7);
+    border: 1px solid rgb(7, 160, 7);
+    border-radius: 10px;
+    font-size: 22px;
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+    padding: 8px;
+}
+
+.yazi-bolumu {
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 770px;
+}
+
+.yazi {
+
+    text-align: left;
+}
+
+
+
+/*
+
+
+odeme sayfasi
+
+
+
+*/
+
+
+
+.odeme-bilgileri-yazi {
+
+    text-align: center;
+    font-size: 25px;
+    padding: 60px 0px;
+}
+
+.kart-bilgileri-div {
+
+    border: 2px solid rgb(228, 228, 228);
+    border-radius: 10px;
+    margin: auto;
+    max-width: 500px;
+    padding: 50px;
+    padding-top: 30px;
+}
+
+.odeme-miktari {
+    
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 20px;
+    color: rgb(7, 160, 7);
+}
+
+.kart-form-div {
+
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 0.066em;
+}
+
+.kart-form-baslik {
+
+    padding-bottom: 20px;
+}
+
+.kart-form {
+
+    display: grid;
+    gap: 30px;
+}
+
+.kart-input-div {
+
+    display: grid;
+    gap: 15px;
+    width: auto;
+    text-align: start;
+}
+
+.kart-input:hover {
+
+
+    transition: 100ms;
+    border: 1px solid rgb(139, 135, 135);
+}
+
+.kart-input:focus {
+
+    transition: 0ms;
+    border-style: double;
+    border: 1px solid rgb(7, 160, 7);
+    padding: 15px;
+}
+
+.kart-input {
+
+    outline: none;
+    padding: 15px;
+    font-size: 20px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.skt-cvv {
+
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+}
+
+#skt {
+
+    width: 100%;
+}
+
+#cvv {
+    
+    width: 100%;
+}
+
+.kart-button-div {
+
+    text-align: center;
+}
+
+.kart-button:hover {
+
+    background-color: rgb(19, 179, 19);
+}
+
+.kart-button:focus {
+
+    background-color: rgb(19, 179, 19);
+}
+
+.kart-button {
+
+    transition: 100ms;
+    color: white;
+    background-color: rgb(7, 160, 7);
+    outline: none;
+    font-size: 20px;
+    padding: 7px;
+    width: 70%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .bagis-div {
+        height: auto;
+        grid-template-columns: auto;
+    }
+}

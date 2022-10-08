@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-08 18:07+0300\n"
+"PO-Revision-Date: 2022-10-08 12:12+0000\n"
+"Last-Translator:   <>\n"
+"Language-Team: \n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: kredi_karti/settings.py:125
+msgid "English"
+msgstr ""
+
+#: kredi_karti/settings.py:126
+msgid "Turkish"
+msgstr ""
+
+#: kredi_karti_app/templates/index.html:8
+msgid "Bağış"
+msgstr "Donation"
+
+#: kredi_karti_app/templates/index.html:18
+msgid "Görsel Bölümü"
+msgstr "Image Section"
+
+#: kredi_karti_app/templates/index.html:29
+msgid "Bağış Miktarı Seçiniz"
+msgstr "Please Choose a Donation Amount"
+
+#: kredi_karti_app/templates/index.html:31
+#: kredi_karti_app/templates/odeme.html:20
+msgid "₺"
+msgstr "$"
+
+#: kredi_karti_app/templates/index.html:35
+msgid "Ad Soyad"
+msgstr "Full Name"
+
+#: kredi_karti_app/templates/index.html:36
+msgid "E-Posta"
+msgstr "E-Mail"
+
+#: kredi_karti_app/templates/index.html:45
+msgid "Bağış Yap"
+msgstr "Donate"
+
+#: kredi_karti_app/templates/index.html:54
+msgid "lorem"
+msgstr ""
+
+#: kredi_karti_app/templates/index.html:55
+msgid ""
+"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sequi "
+"mollitia deserunt dicta assumenda doloremque ullam ipsam eum eveniet, eius, "
+"unde adipisci. Perferendis magni eos totam numquam illo esse vel."
+msgstr ""
+
+#: kredi_karti_app/templates/odeme.html:8
+msgid "Ödeme"
+msgstr "Payment"
+
+#: kredi_karti_app/templates/odeme.html:15
+msgid "Sayın"
+msgstr "Dear"
+
+#: kredi_karti_app/templates/odeme.html:17
+msgid "Ödeme Bilgilerinizi Giriniz"
+msgstr "Please Enter Your Payment Information"
+
+#: kredi_karti_app/templates/odeme.html:22
+msgid "Kart Bilgileri"
+msgstr "Card Info"
+
+#: kredi_karti_app/templates/odeme.html:27
+msgid "Kart Numarası"
+msgstr "Card Number"
+
+#: kredi_karti_app/templates/odeme.html:30
+msgid "SK Tarihi"
+msgstr "EX Date"
+
+#: kredi_karti_app/templates/odeme.html:33
+msgid "CVV"
+msgstr "CVV"
+
+#: kredi_karti_app/templates/odeme.html:36
+msgid "Vakfımıza Mesajınız"
+msgstr "Your Message To Our Foundation"
+
+#: kredi_karti_app/templates/odeme.html:39
+msgid "Ödemeyi Tamamla"
+msgstr "Complete Payment"

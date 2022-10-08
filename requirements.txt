@@ -1,0 +1,5 @@
+python v3.10.4
+django v4.1.1
+django-environ v0.9.0
+django-rosetta
+gettext v0.21-9

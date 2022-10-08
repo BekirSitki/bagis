@@ -1,0 +1,67 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block baslik %} {% endblock %} </title>
+    <link rel="icon" type="image/x-icon" href="{% block favicon %} {% endblock %}">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-div">
+            <div>navbar</div>
+            <div style="text-align: left;">
+            </div>
+        </div>
+    </header>
+    <main>
+        {% block icerik %}
+
+        {% endblock %}
+    </main>
+    
+    <footer>
+        footer
+    </footer>
+
+
+    <script>
+        function validate(evt) {
+            var theEvent = evt;
+            // Handle paste
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+                // Handle key press
+                var key = theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]/;
+            
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+        function validateArrow(evt){
+            var theEvent = evt;
+            var key = theEvent.which;
+            var arrowKeys = /['%','&','(','\'',]/;
+            key = String.fromCharCode(key);
+
+            if( arrowKeys.test(key) ){
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

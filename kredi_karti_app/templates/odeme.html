@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block favicon %}
+../static/favicon.ico
+{% endblock %}
+
+{% block baslik %}
+{% trans "Ödeme" %}
+{% endblock %}
+
+{% block icerik %}
+<div class="kart-bilgileri-ust-div">
+    <div class="odeme-bilgileri-yazi">
+        {% if isim %}
+        <div class="odeme-bilgileri-yazi">{% trans "Sayın" %} {{isim}}</div>
+        {% endif %}
+        {% trans "Ödeme Bilgilerinizi Giriniz" %}
+    </div>
+    <div class="kart-bilgileri-div">
+        <div class="odeme-miktari">{% trans "₺" %}{{miktar}}</div>
+        <div class="kart-form-div">
+            <div class="kart-form-baslik">{% trans "Kart Bilgileri" %}</div>
+            <form method="post" class="kart-form">
+                {% csrf_token %}
+                <div class="kart-input-div">
+                    <input class="kart-input" id="kart_numarasi" type="text" onkeydown="validateArrow(event)" onkeypress="validate(event) "
+                        placeholder="{% trans 'Kart Numarası' %}" maxlength="19" minlength="19" required autocomplete="off">
+                    <div class="skt-cvv">
+                        <div class="skt-div">
+                        <input class="kart-input" id="skt" type="text" onkeydown="validateArrow(event)" onkeypress="validate(event)"  placeholder="{% trans 'SK Tarihi' %}" maxlength="5" minlength="5" required autocomplete="off">
+                        </div>
+                        <div class="cvv-div">
+                        <input class="kart-input" id="cvv" type="text" onkeydown="validateArrow(event)" onkeypress="validate(event)" placeholder="{% trans 'CVV' %}" maxlength="3" minlength="3" required autocomplete="off">
+                        </div>
+                    </div>
+                    <input class="kart-input" id="mesaj" type="text" placeholder="{% trans 'Vakfımıza Mesajınız' %}">
+                </div>
+                <div class="kart-button-div">
+                    <button class="kart-button">{% trans "Ödemeyi Tamamla" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    kart_numarasi.addEventListener('keydown', function (event) {
+        if ((this.value.length === 5 || this.value.length === 10 || this.value.length === 15) && event.which === 8){
+            this.value = this.value.slice(0, this.value.length - 1);
+        }
+        if(this.value.length === 19 && event.which === 8) {
+            
+            document.getElementById('kart_numarasi').style.border = '1px solid rgb(7, 160, 7)';
+            document.getElementById('kart_numarasi').style.padding = '15px';
+
+        }
+        
+    });
+    kart_numarasi.addEventListener('input', function (event) {
+         if (this.value.length === 4 || this.value.length === 9 || this.value.length === 14) {
+            this.value = this.value += " ";
+        }
+        if(this.value.length === 19){
+
+            document.getElementById('kart_numarasi').style.border = '2px solid rgb(7, 160, 7)';
+            document.getElementById('kart_numarasi').style.padding = '14px';
+            
+        }
+    });
+    /*
+    kart_numarasi.addEventListener('input', function (event) {
+        if ((this.value.length === 5 || this.value.length === 10 || this.value.length === 15) ){
+            this.value = this.value.slice(0, this.value.length - 1);
+        }
+        else if (this.value.length === 4 || this.value.length === 9 || this.value.length === 14) {
+            this.value = this.value += " ";
+        }
+    });
+    */
+    skt.addEventListener('keydown', function (event) {
+
+        if ( (this.value.length === 3) && (event.which === 8) ) {
+            this.value = this.value.slice(0, this.value.length - 1);
+        }
+        if ( this.value.length === 5 && event.which === 8 ){
+
+            document.getElementById('skt').style.border = '1px solid rgb(7, 160, 7)';
+            document.getElementById('skt').style.padding = '15px';
+        }
+        
+    });
+    skt.addEventListener('input', function (event) {
+        if ( (this.value.length === 1 && this.value > 1) || 
+        (this.value.length === 2 && this.value > 12)||
+        (this.value.length === 4 && this.value.slice(3, this.value.length) > 3)||
+        (this.value.length === 5 && this.value.slice(3, this.value.length) > 31)
+        ) {
+            this.value = this.value.slice(0, this.value.length - 1);
+            
+        }
+        if ( this.value.length === 5 ){
+    
+            document.getElementById('skt').style.border = '2px solid rgb(7, 160, 7)';
+            document.getElementById('skt').style.padding = '14px';
+        }
+        if ( this.value.length === 2 ) {
+            this.value = this.value += '/';
+        }
+        
+    });
+
+    cvv.addEventListener('keydown', function (event) {
+        if ( this.value.length === 3 && event.which === 8 ){
+
+            document.getElementById('cvv').style.border = '1px solid rgb(7, 160, 7)';
+            document.getElementById('cvv').style.padding = '15px';
+        }
+        
+    });
+    cvv.addEventListener('input', function (event) {
+        if ( this.value.length === 3 ){
+    
+            document.getElementById('cvv').style.border = '2px solid rgb(7, 160, 7)';
+            document.getElementById('cvv').style.padding = '14px';
+        }
+        
+    });
+    mesaj.addEventListener('input', function (event) {
+        
+        if ( this.value ){
+            
+            document.getElementById('mesaj').style.border = '2px solid rgb(7, 160, 7)';
+            document.getElementById('mesaj').style.padding = '14px';
+        } else {
+            
+            document.getElementById('mesaj').style.border = '1px solid rgb(7, 160, 7)';
+            document.getElementById('mesaj').style.padding = '15px';
+        }
+
+    });
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block favicon %}
+../static/favicon.ico
+{% endblock %}
+
+{% block baslik %}
+{% trans "Bağış" %}
+{% endblock %}
+
+{% block icerik %}
+<div class="bagis-ust-div">
+            
+    <div class="bagis-div">
+        
+        <div class="gorsel">
+            <p style="text-align: center; margin-top: 50%; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            {% trans "Görsel Bölümü" %}
+            </p>
+            <!--
+                <img style="width: 100%; max-width: 100%; user-select: none;"
+                src="../static/"
+                alt="Görsel Yüklenemedi!">
+            -->
+        </div>
+        <div class="form-div">
+            <form method="POST" class="bagis_formu">
+                {% csrf_token %}
+                    <div class="form-parcasi" id="form-baslik">{% trans "Bağış Miktarı Seçiniz" %}</div>
+                <div class="form-parcasi" id="form-miktar">
+                    <label style="margin: 17px 0px; color: gray;" id="bagis_miktari_label" >{% trans "₺" %}</label>
+                    <input type="text" onkeydown="validateArrow(event)" onkeypress='validate(event)'placeholder="0" inputmode="numeric" name="bagis_miktari" id="bagis_miktari" required autocomplete="off">
+                </div>
+                <div class="form-parcasi" id="form-bilgiler">
+                    <input class="bilgi-input" type="text" name="isim" id="isim" placeholder="{% trans 'Ad Soyad' %}" autocomplete="off">
+                    <input class="bilgi-input" type="text" name="mail" id="mail" placeholder="{% trans 'E-Posta' %}" autocomplete="off">
+                </div>
+                <div class="form-parcasi" style="text-align: center;">
+                    <button type="submit" id="form-button">
+                        <svg width="22" height="22" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M512 880.661c8.119 0 19.721-5.414 28.228-10.441 217.719-139.217 355.772-301.248 355.772-465.983 0-136.894-93.969-233.571-215.394-233.571-75.409 0-133.414 41.764-168.606 105.571-34.415-63.42-93.196-105.571-168.604-105.571-121.426 0-215.396 96.677-215.396 233.571 0 164.735 138.054 326.766 356.156 465.983 8.124 5.026 19.725 10.441 27.844 10.441z">
+                            </path>
+                        </svg>
+                        {% trans "Bağış Yap" %}
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="yazi-bolumu">
+        <div class="yazi">
+        <h3>{% trans "lorem" %}</h3>
+        <p>{% trans "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sequi mollitia deserunt dicta assumenda doloremque ullam ipsam eum eveniet, eius, unde adipisci. Perferendis magni eos totam numquam illo esse vel." %}</p>
+        </div>
+    </div>
+</div>
+<script>
+    bagis_miktari.addEventListener('keypress', function (event) { 
+
+        var theEvent = event;
+        var key = theEvent.which;
+        key = String.fromCharCode(key);
+        if (!this.value && key === '0'){
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+
+    });
+    bagis_miktari.addEventListener('input', function (event) { 
+        if ( this.value ){
+            document.getElementById('bagis_miktari').style.color = "rgb(7, 160, 7)";
+            document.getElementById('bagis_miktari_label').style.color = "rgb(7, 160, 7)";
+        }else {
+            document.getElementById('bagis_miktari').style.color = "black";
+            document.getElementById('bagis_miktari_label').style.color = "gray";
+        }
+        
+    });
+    isim.addEventListener('input', function (event) { 
+        if ( this.value ){
+            document.getElementById('isim').style.border = "2px solid rgb(7, 160, 7)";
+            document.getElementById('isim').style.padding = "9px";
+        }else {
+            document.getElementById('isim').style.border = "1px solid rgb(117, 113, 113)";
+            document.getElementById('isim').style.padding = "10px";
+        }
+        
+    });
+    mail.addEventListener('input', function (event) { 
+        if ( this.value ){
+            document.getElementById('mail').style.border = "2px solid rgb(7, 160, 7)";
+            document.getElementById('mail').style.padding = "9px";
+        }else {
+            document.getElementById('mail').style.border = "1px solid rgb(117, 113, 113)";
+            document.getElementById('mail').style.padding = "10px";
+        }
+    });
+    
+</script>
+{% endblock %}
